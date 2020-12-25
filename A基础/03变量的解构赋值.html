@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量的解构赋值</title>
+</head>
+<body>
+
+    <script>
+        //ES6允许按照一定模式从数组和对象中提取值，对变量进行赋值
+        //这被称为解构赋值
+        //1.数组的解构
+        /*const F4 = ['小沈阳','刘能','赵四','宋小宝'];
+        let f4 = [xiao,liu,zhao,song] = F4;
+        console.log(f4);*/
+
+        //2.对象的解构
+        const zbs = {
+            name: '赵本山',
+            age: '不详',
+            xiaopin: function() {
+                console.log("昨天今天和明天");
+            }
+        }
+
+        /*let {name,age,xiaopin} = zbs;
+        console.log(name);
+        console.log(age);
+        console.log(xiaopin);*/
+
+        let {xiaopin} = zbs;
+        console.log(xiaopin);
+
+    </script>
+
+</body>
+</html>
