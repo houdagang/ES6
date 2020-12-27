@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+
+    <script>
+        //ES6 允许使用[箭头] (=>) 定义函数（类似lambda表达式，但是不需要单继承。。。）
+        let fn = (a,b) => {
+            return a + b;
+        }
+        /*let fn = function() {
+
+        }*/
+        console.log(fn(1,2));
+
+        //1.this是静态的，this始终指向函数声明时所在的作用域下的this的值
+        function funName() {
+            console.log(this.name);
+        }
+        let funName1 = () => {
+            console.log(this.name);
+        }
+
+        //设置window对象的name属性
+        window.name = "尚硅谷";
+        const school = {
+            name: "ATGUIGU"
+        }
+
+        funName();
+        funName1();
+
+        funName.call(school);
+        funName1.call(school);
+
+        //2.不能作为构造实例化对象
+        let person = (name,age) => {
+            this.name = name;
+            this.age = age;
+        }
+        let person1 = function (name,age){
+            this.name = name;
+            this.age = age;
+        }
+        //Uncaught TypeError: person is not a constructor
+        //let me = new person('1',2);
+        //console.log(me);
+        let me1 = new person1('1',2);
+        console.log(me1);
+
+        //3.不能使用 arguments
+        let fn1 = () => {
+            console.log(arguments);
+        }
+        //Uncaught ReferenceError: arguments is not defined
+        //fn1(1,2,3);
+
+        //4.箭头函数的简写
+            //1.省略小括号，当形参有且只有一个的时候
+        let add = n => {
+            return n + 1;
+        }
+        console.log(add(3));
+        //2.省略花括号，当代码只有一条，（类似 if for等）,此时return 也必须省略
+        let add1 = n => n * n;
+        console.log(add1(6));
+        let add2 = (n) => {
+            return n * n;
+        }
+        console.log(add2(6))
+
+
+
+
+    </script>
+
+</body>
+</html>

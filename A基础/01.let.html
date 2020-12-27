@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //声明变量
+    let a;
+    let b,c,d;
+    let e = 100;
+    let f = 52, g = 'zhangsan', h =[];
+
+    //1.变量不能被重复声明
+    /*let star = "陈赫";
+    //Uncaught SyntaxError: Identifier 'star' has already been declared
+    let star = "陈赤赤";*/
+
+    //2.块儿级作用域，全局，函数，eval
+    /*{
+        let girl = '周清扬';
+    }
+    //Uncaught ReferenceError: girl is not defined
+    console.log(girl);*/
+    /*for(var i = 0;i < 6; i++) {}
+    //这里会打印6
+    console.log(i);
+    for(let j = 0;j < 6; j++) {}
+    //Uncaught ReferenceError: j is not defined
+    console.log(j);*/
+
+    //3.不存在变量提升
+    /*//Uncaught ReferenceError: Cannot access 'song' before initialization
+    console.log(song);
+    let song = '恋爱达人';
+    //undefined
+    console.log(sing);
+    var sing = '张三';*/
+
+    //4.不影响作用域链
+    /*{
+        let school = '北大';
+        function fn() {
+            console.log(school);
+        }
+        //这里输出 ： 北大
+        fn();
+    }*/
+
+
+</script>
+</body>
+</html>

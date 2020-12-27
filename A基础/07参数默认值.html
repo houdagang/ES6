@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数参数默认值</title>
+</head>
+<body>
+
+    <script>
+
+        //ES6允许给函数参数赋值初始值
+        //1.形参初始值
+        //一般把具有默认值参数往后挪
+        function add(a,b,c = 10) {
+            return a + b + c;
+        }
+
+        let result = add(1,2,3);
+        console.log(result);
+        let result1 = add(1,2);
+        console.log(result1);
+
+        //2与解构赋值一起使用
+        function connect({host='127.0.0.1',port='8080',username,password}) {
+            console.log(host);
+            console.log(port);
+            console.log(username);
+            console.log(password);
+        }
+        let user = {
+            port: 8081,
+            username: 'root',
+            password: '952551'
+        }
+        connect(user);
+
+    </script>
+
+</body>
+</html>
