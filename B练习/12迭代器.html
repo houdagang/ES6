@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>迭代器</title>
+</head>
+<body>
+
+    <script>
+
+        //声明一个对象
+        const banji = {
+            name: "终极一班",
+            stus: [
+                'xiaoming',
+                'xiaoning',
+                'xiaotian',
+                'knight'
+            ],
+            [Symbol.iterator](){
+                //索引变量
+                let index = 0;
+                let _this = this;
+                return {
+                    next: () => {
+                        if(index < this.stus.length) {
+                            const result = {value: this.stus[index],done: false}
+                            index++;
+                            return result;
+                        } else {
+                            return {value: undefined,done: true};
+                        }
+                    }
+                };
+            }
+        }
+
+        //本质就是调用的iterator
+        for(let v of banji) {
+            console.log(v)
+        }
+
+        /*banji.stus.forEach((currentValue,index,arr) => {
+            console.log(currentValue)
+            console.log(index);
+            console.log(arr);
+        });
+
+        let arr = [1,2,3,4,5];
+        let sum = 0;
+        arr.forEach((currentValue) => {
+            sum += currentValue;
+            console.log(sum)
+        });*/
+
+    </script>
+
+</body>
+</html>

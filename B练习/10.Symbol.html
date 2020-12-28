@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol</title>
+</head>
+<body>
+
+    <script>
+
+        //向对象中添加方法 ,up,down。假如里面已经有了相同的命名怎么办
+        //由于每一个Symbol值都是不相等的，这意味着Symbol值可以作为标识符，用于对象的属性名，就能保证不会出现同名的属性。
+        //这对于一个对象由多个模块构成的情况非常有用，能防止某一个键被不小心改写或覆盖。
+        let game ={
+            up: function(){
+                console.log('up');
+            },
+            down: function(){
+                console.log('down');
+            }
+        }
+
+        //声明一个对象
+        let methods = {
+            up: Symbol(),
+            down: Symbol()
+        };
+
+        game[methods.up] = function() {
+            console.log("我可以改变形状")
+        }
+
+        game[methods.down] = function() {
+            console.log("我可以快速下降")
+        }
+
+        console.log(game[methods.up]);
+        console.log(game.up);
+
+    </script>
+
+</body>
+</html>
