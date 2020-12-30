@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>静态成员</title>
+</head>
+<body>
+
+    <script>
+        function Phone() {
+
+        }
+        Phone.prototype.name = '手机';
+        Phone.prototype.change = function() {
+            cosnole.log("打电话")
+        }
+        let nokia = new Phone();
+        console.log(nokia.name);
+        console.log(nokia.change);
+
+        class shouji {
+            static name = '手机';
+            static change() {
+                console.log()
+            }
+        }
+
+    </script>
+
+</body>
+</html>

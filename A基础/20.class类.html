@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class类</title>
+</head>
+<body>
+
+    <script>
+
+        //ES5
+        function phone(brand,price){
+            this.brand = brand;
+            this.price = price;
+        }
+        //添加方法
+        phone.prototype.call = function() {
+            console.log("我可以打电话");
+        }
+        //实例化对象
+        let huawei = new phone('华为',5555);
+        huawei.call();
+        console.log(huawei);
+
+        //ES6
+        class Phone {
+            //构造方法 名字固定
+            constructor(brand,price) {
+                this.brand = brand;
+                this.price = price;
+            }
+
+            //方法必须使用该语法，不能使用ES5的对象完整形式
+            call() {
+                console.log("我可以打电话")
+            }
+
+        }
+
+        let xiaomi = new Phone('小米','4999');
+        xiaomi.call();
+        console.log(xiaomi);
+
+    </script>
+
+</body>
+</html>
