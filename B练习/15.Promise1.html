@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送ajax请求</title>
+</head>
+<body>
+
+    <script>
+
+        const p = new Promise((resolve,reject) => {
+            // 1.创建对象
+            const xhr = new XMLHttpRequest();
+            // 2.初始化
+            xhr.open("GET","https://api.apiopen.top/getJoke");
+            // 3发送
+            xhr.send();
+            // 4.绑定事件
+            xhr.onreadystatechange = function () {
+                //判断
+                if(xhr.readyState === 4) {
+                    if(xhr.status >= 200 && xhr.status < 300) {
+                        resolve(xhr.response);
+                    } else {
+                        reject(xhr.status);
+                    }
+                }
+            }
+        });
+        p.then(function(value){
+            console.log(value);
+        },function(error){
+            console.log(error);
+        })
+
+    </script>
+
+</body>
+</html>

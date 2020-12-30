@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+
+        const p = new Promise((resolve,reject) => {
+            setTimeout(()=> {
+                resolve('用户函数');
+            },1000)
+        });
+
+        //调用 then 方法,then方法的返回结果是promise对象，对象状态由回调函数的执行状态决定
+        //1.如果回调函数中返回的结果是promise类型的属性，状态为成功,返回值为对象的成功的值
+        const result = p.then(value => {
+
+        },reason => {
+
+        }).then(value => {
+
+        });
+
+    </script>
+
+</body>
+</html>
