@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+
+        class Phone {
+
+            get brand() {
+                console.log("调用get");
+                return 1;
+            }
+
+            //set方法必传值
+            set brand(value) {
+                console.log("调用set");
+            }
+        }
+
+        let s = new Phone();
+        //实例.get方法调用get方法，而且返回值就是s.brand的值
+        console.log(s.brand);
+        //赋值set
+        s.brand = '锤子';
+
+    </script>
+
+</body>
+</html>
