@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数值扩展</title>
+</head>
+<body>
+
+    <script>
+
+        // 1.Number.EPSILON是javascript标识的最小的精度
+        //它的属性接近于2.2204460492503130808472633361816E -16（负十六次方）
+        //如果两个数字的差值小于这个数，那我们就认为他们是相等的
+        function equal(a, b) {
+            if(Math.abs(a - b) < Number.EPSILON) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        console.log(0.1 + 0.2 === 0.3);
+        console.log(equal(0.1 + 0.2,0.3));
+
+        // 2 二进制八进制十六进制
+        let ejz = 0b1001;
+        let bjz = 0o7777;
+        let sjz = 100;
+        let sljz = 0xfff;
+
+        // 3.Number.isFinite 检测一个数值是否为有限数字
+        console.log(Number.isFinite(123));
+        console.log(Number.isFinite(100/0));
+        console.log(Number.isFinite(Number.NaN));
+
+        // 4.Number.parseInt Number.parseFloat字符串转整数
+        console.log(Number.parseInt('5211314.123'));
+        console.log(Number.parseInt('5211314.1zhangsan'));
+        console.log(Number.parseFloat('5211314.1zhangsan'));
+        // 5.Number.isInteger 判断一个数字是否为整数
+        // 6.Math.trunc 取整
+        // 7.Math.sign 判断一个数是正负还是0
+
+
+
+    </script>
+
+</body>
+</html>

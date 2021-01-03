@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES8新特性</title>
+</head>
+<body>
+
+    <script>
+
+        //async 函数
+
+        async function fn() {
+            //返回的结果如果不是Promise类型的对象，则结果就是成功的Promise
+            //抛出错误，返回结果就是失败的promise
+            return new Promise((resolve,reject) => {
+                resolve('成功的数据');
+            })
+        }
+
+        const result = fn();
+
+        result.then(value => {
+            console.log(value);
+        },reason => {
+            console.warn(reason);
+        })
+
+    </script>
+
+</body>
+</html>

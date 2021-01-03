@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象方法</title>
+</head>
+<body>
+
+    <script>
+
+        // 1.Object.is判断两个值是否完全相等
+        // 2.Object.assign 对象的合并
+        const config1 = {
+            host: 'localhost',
+            port: '3306'
+        }
+
+        const config2 = {
+            host: '127.0.0.1',
+            port: '8080',
+            address: '/yysfxt'
+        }
+        //后面的对象会覆盖前面的对象
+        console.log(Object.assign(config2,config1));
+
+        // 3.Object.setPrototypeOf  //设置对象原型
+        const school = {
+            name: '尚硅谷'
+        }
+        const city = {
+            n:['北京','上海','济南']
+        }
+        Object.setPrototypeOf(school,city);
+        console.log(school.n);
+
+    </script>
+
+</body>
+</html>
